@@ -1,0 +1,134 @@
+# Data Structures in Python
+
+# Data Structure is a way to organize & store data efficiently.
+# In Python, we have 4 main types of data structures:
+# 1. List    [ ]
+# 2. Tuple   ( )
+# 3. Set     { }
+# 4. Dict    { }
+
+# Each data structure has its own properties and built-in methods.
+
+
+# ----------------------------
+# 1. LIST
+# ----------------------------
+
+# Properties:
+# - Mutable: Can modify the list
+# - Ordered: Maintains insertion order
+# - Heterogeneous: Can store different data types
+# - Allows duplicates
+# - Supports Positive & Negative Indexing
+# - Supports slicing
+
+# Empty List
+li1 = []              # OR li1 = list()
+print("li1 =", li1)   # Output: []
+
+# Ordered
+li2 = [5, 99, 10, 30, 40, 50]
+print("li2 =", li2)
+
+# Heterogeneous
+li3 = [10, "Pranav", 3.14, False, True]
+print("li3 =", li3)
+
+# Allows duplicates
+li4 = [1, 2, 6, 4, 2, 8, 9, 4]
+print("li4 =", li4)
+
+# Positive & Negative Indexing
+li5 = [10, 20, 30, 40, 50]
+print("li5 =", li5)
+print("li5[0] =", li5[0])    # 10
+print("li5[1] =", li5[1])    # 20
+print("li5[-1] =", li5[-1])  # 50
+print("li5[-3] =", li5[-3])  # 30
+print("li5[2] =", li5[2])    # 30
+
+# Slicing
+li6 = [11, 22, 33, 44, 55, 66, 77, 88, 99]
+print("li6 =", li6)
+print("li6[::] =", li6[::])
+print("li6[1::] =", li6[1::])
+print("li6[2::] =", li6[2::])
+print("li6[::2] =", li6[::2])
+print("li6[::3] =", li6[::3])
+print("li6[:3] =", li6[:3])
+print("li6[::-1] =", li6[::-1])
+print("li6[::-2] =", li6[::-2])
+
+
+# ----------------------------
+# Built-in Functions on List
+# ----------------------------
+li7 = [34, 54, 12, 21, 76, 67, 43, 45]
+print("li7 =", li7)
+print("max =", max(li7))
+print("min =", min(li7))
+print("sum =", sum(li7))
+print("len =", len(li7))
+print("sorted =", sorted(li7))
+print("sorted_rev =", sorted(li7, reverse=True))
+
+
+# ----------------------------
+# Built-in Methods on List
+# ----------------------------
+
+
+# append(x)    - Add single element at the end
+# insert(i, x) - Add element x at index i
+# extend(list) - Add multiple elements
+# remove(x)    - Remove first occurrence of x
+# pop()        - Remove last element
+# pop(i)       - Remove element at index i
+# clear()      - Remove all elements
+# count(x)     - Count occurrences of x
+# index(x)     - Find index of first occurrence of x
+# copy()       - Returns a copy of the list
+# sort()       - Sort list in ascending order
+# reverse()    - Reverse the list
+
+
+li = [10, 30, 20, 40]
+
+# Add elements
+li.append(50)             # Add single element at end
+print("After append:", li)
+
+li.insert(1, 15)          # Insert element at index 1
+print("After insert:", li)
+
+li.extend([60, 70])       # Add multiple elements
+print("After extend:", li)
+
+# Remove elements
+li.remove(15)             # Remove first occurrence of 15
+print("After remove:", li)
+
+li.pop()                  # Remove last element
+print("After pop():", li)
+
+li.pop(2)                 # Remove element at index 2
+print("After pop(2):", li)
+
+li.clear()                # Remove all elements
+print("After clear():", li)
+
+# Count and index
+li = [60, 50, 40, 30, 20, 10]
+print("Index of 30:", li.index(30))
+print("Count of 10:", li.count(10))
+
+# Copy
+c = li.copy()
+print("Copy of list:", c)
+
+# Sorting and reversing
+li.sort()
+print("Sorted list:", li)
+
+li.reverse()
+print("Reversed list:", li)
