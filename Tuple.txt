@@ -1,0 +1,89 @@
+# Tuple:
+
+# - Immutable (we cannot make changes to the tuple)
+# - Ordered
+# - Heterogeneous
+# - Allows duplicates
+# - Supports both Positive & Negative Indexing
+# - Supports Slicing Operation as well
+
+# Empty Tuple
+
+tu1 = ()
+print("tu1 =", tu1)  # Output: tu1 = ()
+
+# Ordered
+
+tu2 = (10, 30, 40, 20, 50)
+print("tu2 =", tu2)  # Output: tu2 = (10, 30, 40, 20, 50)
+
+# Heterogeneous
+
+tu3 = (11, "CJC", 3.14, True)
+print("tu3 =", tu3)  # Output: tu3 = (11, "CJC", 3.14, True)
+
+# Allows duplicates
+
+tu4 = (10, 20, 30, 10, 50, 40)
+print("tu4 =", tu4)  # Output: tu4 = (10, 20, 30, 10, 50, 40)
+
+# Supports Both Positive & Negative Indexing
+
+tu5 = (11, 22, 66, 44, 77, 55, 33)
+print("tu5[0] =", tu5[0])  # Output: tu5[0] = 11
+print("tu5[-1] =", tu5[-1])  # Output: tu5[-1] = 33
+
+# Slicing Operations
+
+tu6 = (10, 20, 30, 40, 50, 60, 70, 80)
+print("tu6[1:4:1] =", tu6[1:4:1])  # Output: tu6[1:4:1] = (20, 30, 40)
+print("tu6[:4:] =", tu6[:4:])  # Output: tu6[:4:] = (10, 20, 30, 40)
+print("tu6[::-2] =", tu6[::-2])  # Output: tu6[::-2] = (80, 60, 40, 20)
+
+# Built-in Functions
+
+tu7 = (123, 345, 567, 432, 214, 456, 876, 678)
+print("max(tu7) =", max(tu7))  # Output: max(tu7) = 876
+print("min(tu7) =", min(tu7))  # Output: min(tu7) = 123
+print("sum(tu7) =", sum(tu7))  # Output: sum(tu7) = 3691
+print("len(tu7) =", len(tu7))  # Output: len(tu7) = 8
+print("sorted(tu7) =", sorted(tu7))  # Output: sorted(tu7) = [123, 214, 345, 432, 456, 567, 678, 876]
+
+print("tu7.index(456) =", tu7.index(456))  # Output: tu7.index(456) = 5
+print("tu7.count(432) =", tu7.count(432))  # Output: tu7.count(432) = 1
+
+# Tuple is also called a “concrete” data structure.
+# We can create a tuple without any symbol as well.
+# We should take care while creating a tuple with a single element.
+# We MUST put a comma while the tuple has a single element.
+# Since tuple is Immutable, we can NOT make any changes in it.
+# But if we use the concept of “typecasting”, we can make changes in the tuple, 
+# but as a good programmer, it is not suggested to use it.
+
+# Without ( ) symbol
+
+tu8 = 10, 20, 30, 40
+print("tu8 =", tu8)  # Output: tu8 = (10, 20, 30, 40)
+
+# Single element tuple
+
+tu9 = 111,
+print("tu9 =", tu9)  # Output: tu9 = (111,)
+
+# Typecasting
+
+tu1 = (1, 2, 3, 4, 5)
+tu2 = list(tu1)
+print(type(tu2))  # Output: <class 'list'>
+tu1 = tuple(tu2)
+print(type(tu1))  # Output: <class 'tuple'>
+
+
+
+
+
+
+
+
+
+
