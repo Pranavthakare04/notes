@@ -1,0 +1,375 @@
+# Purpose of Files
+
+"""
+The purpose of Files in Python is:
+        "To store data permanently."
+
+=> Data stored in RAM (Main Memory) is temporary.
+=> Data stored in Files (Secondary Memory) is permanent.
+=> Hence, files help in achieving "Data Persistency".
+
+A file allows:
+        - Storing data permanently
+        - Retrieving data whenever required
+        - Sharing data between programs
+        - Managing large volumes of information
+"""
+
+
+# Types of Applications in Files
+
+"""
+The purpose of Files: "To maintain Data Persistency."
+Data persistency means storing data permanently.
+
+Based on this, applications are of two types:
+        1) Non-Persistent Applications
+        2) Persistent Applications
+"""
+
+# 1) Non-Persistent Applications
+
+"""
+=> Data is:
+        - Taken from Keyboard
+        - Stored temporarily in Main Memory (RAM)
+        - Processed
+        - Output shown on Monitor
+
+=> Data is NOT saved permanently.
+
+Examples:
+        - All previous normal Python programs (loops, functions, etc.)
+
+=> Limitation:
+        - RAM-based data is temporary -> lost when program exits.
+"""
+
+# Example of Non-Persistent Program
+
+def non_persistent_example():
+    a = int(input("Enter a number: "))
+    b = int(input("Enter another number: "))
+    print("Sum =", a + b)
+
+# 2) Persistent Applications
+
+"""
+=> Data is:
+        - Taken from Keyboard
+        - Stored temporarily in RAM
+        - Processed
+        - Saved Permanently
+
+Two ways to store permanent data:
+        1) Using Files
+        2) Using RDBMS Databases
+           (Oracle, MySQL, MongoDB, DB2, PostgreSQL,
+            SQL Server, SQLite3, etc.)
+"""
+
+# Example of Persistent Program (Using File)
+
+def persistent_example():
+    name = input("Enter your name: ")
+    with open("data.txt", "a") as f:
+        f.write(name + "\n")
+    print("Data saved permanently in data.txt")
+
+
+
+# Data Persistency using Files
+
+"""
+Definition of File:
+
+=> A File is a collection of records.
+=> Files reside in Secondary Memory (HDD/SSD).
+=> Technically, a File Name is a named location in secondary memory.
+=> Purpose of Files: "To achieve Data Persistency."
+=> All objects of Main Memory (RAM) become Records in File.
+=> Records from File become objects in Main Memory again.
+
+"""
+
+"""
+Definition of Stream:
+
+=> The flow of data between:
+        • Objects of Main Memory (RAM)
+        • Files of Secondary Memory (HDD/SSD)
+   is called a STREAM.
+
+"""
+
+# Operations on Files               
+
+"""
+On files, we can perform Two Types of Operations:
+        1) Write Operation
+        2) Read Operation
+"""
+
+# 1) Write Operation
+
+"""
+Purpose:
+    "To transfer or save object data of Main Memory 
+     into the File of Secondary Memory."
+
+Steps:
+    1) Choose the File Name
+    2) Open the File Name in WRITE Mode
+    3) Perform write operations (cycle)
+
+Possible Exceptions:
+    a) IOError
+    b) OSError
+    c) FileExistsError
+"""
+
+# Example of Write Operation
+
+def write_example():
+    try:
+        file_name = "sample_write.txt"
+        with open(file_name, "w") as f:
+            data = input("Enter some text to save: ")
+            f.write(data)
+        print("Data written successfully!")
+    except (IOError, OSError, FileExistsError) as e:
+        print("Error while writing file:", e)
+
+
+# 2) Read Operation
+
+"""
+Purpose:
+    "To transfer/read the record from File of Secondary 
+     Memory into an object of Main Memory."
+
+Steps:
+    a) Choose the File Name
+    b) Open the File in READ Mode
+    c) Perform read operations (cycle)
+
+Possible Exceptions:
+    a) FileNotFoundError
+    b) EOFError
+"""
+
+# Example of Read Operation
+
+def read_example():
+    try:
+        file_name = "sample_write.txt"
+        with open(file_name, "r") as f:
+            content = f.read()
+            print("File Content:\n", content)
+    except FileNotFoundError:
+        print("File does not exist!")
+    except EOFError:
+        print("Reached End of File!")
+
+
+# Types of Files in Python
+
+"""
+In Python, we have TWO types of files:
+        1) Text Files
+        2) Binary Files
+"""
+
+# 1. Text Files
+
+"""
+=> Text files contain alphabets, digits, symbols.
+=> Denoted by letter 't'
+=> By default, every file is treated as a TEXT file.
+
+Examples:
+    .txt , .py , .c , .cpp , .html , .docx , .json
+
+Features:
+    • Human readable
+    • Stores data in normal character (ASCII/UTF-8) format
+"""
+
+
+# 2. Binary Files
+
+"""
+=> Binary files contain data in the form of binary (0s & 1s)
+=> Denoted by letter 'b'
+
+Examples:
+    Image files: .jpg , .jpeg , .png , .gif
+    Audio files: .mp3 , .wav
+    Video files: .mp4 , .mkv
+    Other binary formats: .exe , .dat
+
+Features:
+    • Not human readable
+    • Used for storing complex objects, media files, etc.
+"""
+
+# File Opening Modes in Python
+
+"""
+=> File opening modes tell "IN WHICH MODE we are opening a file".
+=> There are 8 file opening modes in Python.
+"""
+
+# 1. r   (READ Mode)
+
+"""
+=> Opens file for READ operation only.
+=> File must EXIST -> otherwise FileNotFoundError.
+=> Default file mode is "r".
+
+Use case:
+    f = open("data.txt", "r")
+"""
+
+# 2. w   (WRITE Mode)
+
+"""
+=> Creates NEW file if not exists.
+=> If file EXISTS -> old data is OVERWRITTEN.
+=> Used only for WRITE operations.
+
+Use case:
+    f = open("data.txt", "w")
+"""
+
+# 3. a   (APPEND Mode)
+
+"""
+=> Creates NEW file if not exists.
+=> If file EXISTS → new data APPENDED (added at end).
+=> Used for WRITE operations.
+
+Use case:
+    f = open("log.txt", "a")
+"""
+
+# 4. r+  (READ + WRITE Mode)
+
+"""
+=> File must EXIST -> otherwise FileNotFoundError.
+=> First performs READ, later WRITE.
+=> Does NOT create new files.
+
+Use case:
+    f = open("data.txt", "r+")
+"""
+
+# 5. w+  (WRITE + READ Mode)
+
+"""
+=> Creates NEW file if not exists.
+=> Overwrites existing file.
+=> First WRITE, then READ.
+
+Use case:
+    f = open("data.txt", "w+")
+"""
+
+# 6. a+  (APPEND + READ Mode)
+
+"""
+=> Creates NEW file if not exists.
+=> Appends data to existing file.
+=> First WRITE, then READ.
+
+Use case:
+    f = open("data.txt", "a+")
+"""
+
+# 7. x   (EXCLUSIVE CREATE Mode)
+
+"""
+=> Creates NEW file ONLY.
+=> If file exists -> FileExistsError.
+=> Used for write operations.
+
+Use case:
+    f = open("newfile.txt", "x")
+"""
+
+
+# 8. x+  (EXCLUSIVE CREATE + READ Mode)
+
+"""
+=> Creates NEW file ONLY.
+=> If file exists -> FileExistsError.
+=> First WRITE, then READ.
+
+Use case:
+    f = open("newfile.txt", "x+")
+"""
+
+
+# Number of Approaches to Open Files in Python
+
+
+"""
+To perform ANY file operation (read/write), we must OPEN the file.
+Python gives 2 approaches:
+
+        1) Using open()
+        2) Using with open() as
+"""
+
+# 1) Using open()
+
+"""
+Syntax:
+        varname = open("filename", "filemode")
+
+Explanation:
+
+=> varname -> file pointer object  
+=> Type -> <class '_io.TextIOWrapper'>
+=> open() -> predefined function from builtins module  
+=> "filename" -> name of file  
+=> "filemode" -> r, w, a, r+, w+, a+, x, x+
+
+Important:
+
+=> open() does NOT close file automatically  
+=> We must use close() to maintain data consistency 
+ 
+"""
+
+# Example using open()
+
+def example_using_open():
+    f = open("data.txt", "w")
+    f.write("Hello world!")
+    f.close()   # manual closing is required
+
+
+# 2) Using with open() as
+
+"""
+Syntax:
+        with open("filename", "filemode") as varname:
+                # file operations
+
+Explanation:
+
+=> "with" and "as" are keywords  
+=> open() opens the file  
+=> File remains open ONLY inside the indented block  
+=> After indentation ends -> file closes automatically  
+=> This is called Auto-Closeability
+"""
+
+# Example using with open()
+
+def example_using_with():
+    with open("data.txt", "w") as f:
+        f.write("Hello world!")
+    # After this block, file is auto-closed
+
